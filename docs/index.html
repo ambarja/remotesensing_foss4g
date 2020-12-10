@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Teledetección con Código abierto y Software Libre</title>
+  <meta name="description" content="This is the training materials for the R for Geospatial Processing workshop at FOSS4G 2019, Bucarest (Romania)." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Teledetección con Código abierto y Software Libre" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the training materials for the R for Geospatial Processing workshop at FOSS4G 2019, Bucarest (Romania)." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Teledetección con Código abierto y Software Libre" />
+  
+  <meta name="twitter:description" content="This is the training materials for the R for Geospatial Processing workshop at FOSS4G 2019, Bucarest (Romania)." />
+  
+
+<meta name="author" content="Hugo Añamuro y Antony Barja" />
+
+
+<meta name="date" content="2020-12-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Teledetección con software libre de código abierto</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="#prerequisites"><i class="fa fa-check"></i><b>1</b> Prerequisites</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="#about-this-document"><i class="fa fa-check"></i><b>1.1</b> About this document</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Teledetección con Código abierto y Software Libre</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Teledetección con Código abierto y Software Libre</h1>
+<p class="author"><em>Hugo Añamuro y Antony Barja</em></p>
+<p class="date"><em>2020-12-10</em></p>
+</div>
+<div id="prerequisites" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
+<p>This workshop is designed for the attendance of FOSS4G 2019. So basics knowledge in GIS is expected (simple features, projections and CRS, geometrical operations, etc.).</p>
+<p>No knowledge of R is required. A minimal knowledge of <a href="https://rmarkdown.rstudio.com/">(R)mardown</a> will be a plus to take notes.</p>
+<p>Please install R on your system and the following libraries.</p>
+<p>Please follow installation instructions from the <a href="https://cran.r-project.org/">CRAN projet</a>.</p>
+<p>The {sf} library needs several geospatial core libraries (GDAL, GEOS, PROJ) so please follow <a href="https://github.com/r-spatial/sf/">{sf} installation instructions</a> to be sure to have those.</p>
+<p>For Ubuntu users, ThinkR published a blogpost about <a href="https://rtask.thinkr.fr/installation-of-r-3-5-on-ubuntu-18-04-lts-and-tips-for-spatial-packages/">the installation of r 3 5 on Ubuntu 18.04 LTS and tips for spatial packages</a></p>
+<p>For <a href="https://live.osgeo.org">OSGeoLive</a> users, there is already some of them installed in the distribution.
+Please start Jupyter Notebooks (Menu -&gt; GeoSpatial -&gt; Spatial Tools -&gt; Jupyter Notebook). It should open a web page.</p>
+<p>Click on <code>New</code> in the top right and start a new R Notebook. Then install only the following packages :</p>
+<div id="about-this-document" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> About this document</h2>
+<p>This document had been written with the <a href="https://bookdown.org/yihui/bookdown">R Bookdown package</a> and <a href="https://www.rstudio.com">Rstudio</a>. You can use the editor of your choice to follow the instruction, be careful on the path given by the {here} package.</p>
+<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
+<p>You can contribute to this document on GitHub :</p>
+<p><a href=""></a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com//edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+book_filename: "Teledetección con software libre de código abierto"
+delete_merged_file: true
+output_dir: "docs"
+language:
+  label:
+    fig: "FIGURE "
+    tab: "TABLE "
+
+  ui:
+    chapter_name: "Chapter "
