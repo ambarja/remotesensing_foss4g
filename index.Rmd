@@ -1,5 +1,5 @@
 --- 
-title: "Teledetección con Código abierto y Software Libre"
+title: "Teledetección con Open Source y Software Libre"
 author: "Hugo Añamuro y Antony Barja"
 date: "`r Sys.Date()`"
 bibliography:
@@ -13,7 +13,8 @@ site: bookdown::bookdown_site
 biblio-style: apalike
 ---
 
-# Prerequisites
+# Prerequisites{-}
+<a href=""><img src="img/portada.png" width="250" height="375" alt="The geocompr book cover" align="right" style="margin: 0 1em 0 1em" /></a>
 
 This workshop is designed for the attendance of FOSS4G 2019. So basics knowledge in GIS is expected (simple features, projections and CRS, geometrical operations, etc.).
 
