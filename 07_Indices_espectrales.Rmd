@@ -1,0 +1,19 @@
+# Índices Espectrales
+
+
+## Índice de Diferencia Normalizada de Vegetación (NDVI)
+## Índice de Vegetación Mejorada (EVI)
+## Índice de vegetación Transformado (TVI)
+## Índice de vegetación Transformado Corregido (CTVI)
+## Índice de vegetación Ajustado al Suelo (SAVI)
+## Índice de Área foliar (LAI)
+## Índice de Suelo desnudo (BSI)
+## Índice de Diferencia Normalizada Agua (NDWI)
+## Modificación del índice de Diferencia Normalizada Agua (MDWI)
+## Índice de estrés Hídrico (MSI)
+## Índice Normalizado de Diferencia de Nieve (NDSI)
+## Índice de Diferencia Normalizada de Humedad  (NDMI)
+## Índice Normalizado de Áreas Quemadas (NBRI)
+
+
+

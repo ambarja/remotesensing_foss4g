@@ -1,0 +1,7 @@
+# Post Procesamiento 
+
+## Presición de Clasificación
+### Matriz de Confusión
+### Índice de Kappa
+
+## Conversión de Raster a Vector

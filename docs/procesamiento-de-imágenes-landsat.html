@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Procesamiento de imágenes Landsat | Teledetección con Open Source y Software Libre</title>
+  <meta name="description" content="Esta es una guia de auto entrenamiento para el uso de Qgis en el procesamiento digital de imagenes satelitales libres Perú - 2019." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Procesamiento de imágenes Landsat | Teledetección con Open Source y Software Libre" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Esta es una guia de auto entrenamiento para el uso de Qgis en el procesamiento digital de imagenes satelitales libres Perú - 2019." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Procesamiento de imágenes Landsat | Teledetección con Open Source y Software Libre" />
+  
+  <meta name="twitter:description" content="Esta es una guia de auto entrenamiento para el uso de Qgis en el procesamiento digital de imagenes satelitales libres Perú - 2019." />
+  
+
+<meta name="author" content="Hugo Añamuro y Antony Barja" />
+
+
+<meta name="date" content="2021-01-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="modelos-digitales-de-elevación.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Teledetección con software libre de código abierto</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Acerca de esta Guía</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#requerimientos-básicos-de-hardware"><i class="fa fa-check"></i><b>0.1</b> Requerimientos Básicos de Hardware</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="breve-intoducción-a-la-teledetección.html"><a href="breve-intoducción-a-la-teledetección.html"><i class="fa fa-check"></i><b>1</b> Breve Intoducción a la Teledetección</a></li>
+<li class="chapter" data-level="2" data-path="instalacion-de-software-y-complementos.html"><a href="instalacion-de-software-y-complementos.html"><i class="fa fa-check"></i><b>2</b> Instalacion de Software y Complementos</a><ul>
+<li class="chapter" data-level="2.1" data-path="instalacion-de-software-y-complementos.html"><a href="instalacion-de-software-y-complementos.html#instalación-de-qgis-en-windows"><i class="fa fa-check"></i><b>2.1</b> Instalación de Qgis en Windows</a></li>
+<li class="chapter" data-level="2.2" data-path="instalacion-de-software-y-complementos.html"><a href="instalacion-de-software-y-complementos.html#instalación-de-qgis-en-linux"><i class="fa fa-check"></i><b>2.2</b> Instalación de Qgis en Linux</a></li>
+<li class="chapter" data-level="2.3" data-path="instalacion-de-software-y-complementos.html"><a href="instalacion-de-software-y-complementos.html#instalación-de-comeplementos-plugins"><i class="fa fa-check"></i><b>2.3</b> Instalación de Comeplementos (Plugins)</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="instalacion-de-software-y-complementos.html"><a href="instalacion-de-software-y-complementos.html#instalación-de-semi-automatic-clasification-plugin"><i class="fa fa-check"></i><b>2.3.1</b> Instalación de Semi Automatic Clasification Plugin</a></li>
+<li class="chapter" data-level="2.3.2" data-path="instalacion-de-software-y-complementos.html"><a href="instalacion-de-software-y-complementos.html#instalación-de-map-swipe-tool"><i class="fa fa-check"></i><b>2.3.2</b> Instalación de Map Swipe Tool</a></li>
+<li class="chapter" data-level="2.3.3" data-path="instalacion-de-software-y-complementos.html"><a href="instalacion-de-software-y-complementos.html#instalación-de-cloud-masking"><i class="fa fa-check"></i><b>2.3.3</b> Instalación de Cloud Masking</a></li>
+<li class="chapter" data-level="2.3.4" data-path="instalacion-de-software-y-complementos.html"><a href="instalacion-de-software-y-complementos.html#mas-plugins-conforme-se-avance-la-guia.."><i class="fa fa-check"></i><b>2.3.4</b> Mas Plugins conforme se avance la guia…..</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html"><i class="fa fa-check"></i><b>3</b> Adquisición de Imágenes</a><ul>
+<li class="chapter" data-level="3.1" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#adquisición-de-modelos-digitales-de-elevación"><i class="fa fa-check"></i><b>3.1</b> Adquisición de modelos digitales de elevación</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#mediante-plugin-srtm."><i class="fa fa-check"></i><b>3.1.1</b> Mediante Plugin “srtm”.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-mde-srtm-90m"><i class="fa fa-check"></i><b>3.1.2</b> Descargar MDE SRTM 90m</a></li>
+<li class="chapter" data-level="3.1.3" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-mde-srtm-30m"><i class="fa fa-check"></i><b>3.1.3</b> Descargar MDE SRTM 30m</a></li>
+<li class="chapter" data-level="3.1.4" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-aster-versoin-actual-de-30m"><i class="fa fa-check"></i><b>3.1.4</b> Descargar ASTER (versoin actual) de 30m</a></li>
+<li class="chapter" data-level="3.1.5" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-alos-palsar-12.5m"><i class="fa fa-check"></i><b>3.1.5</b> Descargar ALOS PALSAR 12.5m</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#adquisición-de-imágenes-landsat"><i class="fa fa-check"></i><b>3.2</b> Adquisición de Imágenes Landsat</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-mediante-plugin-scp"><i class="fa fa-check"></i><b>3.2.1</b> Descargar mediante Plugin “SCP”</a></li>
+<li class="chapter" data-level="3.2.2" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-usando-earth-explorer"><i class="fa fa-check"></i><b>3.2.2</b> Descargar Usando Earth Explorer</a></li>
+<li class="chapter" data-level="3.2.3" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-usando-glovis"><i class="fa fa-check"></i><b>3.2.3</b> Descargar Usando Glovis</a></li>
+<li class="chapter" data-level="3.2.4" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-imágenes-nivel-2-y-nivel-3-mediante-descarga-bajo-demanda."><i class="fa fa-check"></i><b>3.2.4</b> Descargar Imágenes Nivel 2 y nivel 3 Mediante descarga bajo demanda.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#adquisición-de-imágenes-sentinel-2"><i class="fa fa-check"></i><b>3.3</b> Adquisición de imágenes Sentinel 2</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-mediante-plugin-scp-1"><i class="fa fa-check"></i><b>3.3.1</b> Descargar mediante Plugin “SCP”</a></li>
+<li class="chapter" data-level="3.3.2" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-usando-earth-explorer-1"><i class="fa fa-check"></i><b>3.3.2</b> Descargar Usando Earth Explorer</a></li>
+<li class="chapter" data-level="3.3.3" data-path="adquisición-de-imágenes.html"><a href="adquisición-de-imágenes.html#descargar-usando-copernicus-open-access-hub"><i class="fa fa-check"></i><b>3.3.3</b> Descargar usando Copernicus Open Access Hub</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html"><i class="fa fa-check"></i><b>4</b> MODELOS DIGITALES DE ELEVACIÓN</a><ul>
+<li class="chapter" data-level="4.1" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html#reproyectar-modelo-digital-de-elevación"><i class="fa fa-check"></i><b>4.1</b> Reproyectar modelo digital de elevación</a></li>
+<li class="chapter" data-level="4.2" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html#cortar-modelo-digital-de-elevación"><i class="fa fa-check"></i><b>4.2</b> Cortar modelo digital de elevación</a></li>
+<li class="chapter" data-level="4.3" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html#cálculo-de-pendiente"><i class="fa fa-check"></i><b>4.3</b> Cálculo de pendiente</a></li>
+<li class="chapter" data-level="4.4" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html#cálculo-de-dirección-de-pendiente-aspecto"><i class="fa fa-check"></i><b>4.4</b> Cálculo de dirección de pendiente (Aspecto)</a></li>
+<li class="chapter" data-level="4.5" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html#cálculo-de-índice-de-robustez-heterogeneidad-del-terreno"><i class="fa fa-check"></i><b>4.5</b> Cálculo de Índice de robustez (heterogeneidad del terreno)</a></li>
+<li class="chapter" data-level="4.6" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html#cálculo-de-sombras-hillshade"><i class="fa fa-check"></i><b>4.6</b> Cálculo de sombras (Hillshade)</a></li>
+<li class="chapter" data-level="4.7" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html#extracción-de-curvas-de-nivel"><i class="fa fa-check"></i><b>4.7</b> Extracción de curvas de Nivel</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html"><i class="fa fa-check"></i><b>5</b> Procesamiento de imágenes Landsat</a><ul>
+<li class="chapter" data-level="5.1" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#pre-procesamiento-de-las-imágenes-con-el-complemento-semi-automatic-clasification-pluging"><i class="fa fa-check"></i><b>5.1</b> Pre procesamiento de las imágenes con el complemento Semi Automatic Clasification Pluging</a></li>
+<li class="chapter" data-level="5.2" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#pre-procesamiento-con-grass"><i class="fa fa-check"></i><b>5.2</b> Pre – procesamiento con GRASS</a></li>
+<li class="chapter" data-level="5.3" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#pre-procesamiento-con-saga"><i class="fa fa-check"></i><b>5.3</b> Pre – procesamiento con SAGA</a></li>
+<li class="chapter" data-level="5.4" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#combinación-o-composición-rgb"><i class="fa fa-check"></i><b>5.4</b> Combinación o composición RGB</a></li>
+<li class="chapter" data-level="5.5" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#mosaico-de-imágenes"><i class="fa fa-check"></i><b>5.5</b> Mosaico de imágenes</a></li>
+<li class="chapter" data-level="5.6" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#fusión-de-imágenes"><i class="fa fa-check"></i><b>5.6</b> Fusión de imágenes</a></li>
+<li class="chapter" data-level="5.7" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#cloud-masking"><i class="fa fa-check"></i><b>5.7</b> Cloud Masking</a></li>
+<li class="chapter" data-level="5.8" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#temperatura-de-brillo"><i class="fa fa-check"></i><b>5.8</b> Temperatura de brillo</a></li>
+<li class="chapter" data-level="5.9" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#corrección-topográfica"><i class="fa fa-check"></i><b>5.9</b> Corrección Topográfica</a></li>
+<li class="chapter" data-level="5.10" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#relleno-slc-landsat-7"><i class="fa fa-check"></i><b>5.10</b> Relleno SLC landsat 7</a></li>
+<li class="chapter" data-level="5.11" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#índices-espectrales"><i class="fa fa-check"></i><b>5.11</b> Índices espectrales</a></li>
+<li class="chapter" data-level="5.12" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#clasificación-de-imágenes"><i class="fa fa-check"></i><b>5.12</b> Clasificación de Imágenes</a><ul>
+<li class="chapter" data-level="5.12.1" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#clasificación-no-supervisada"><i class="fa fa-check"></i><b>5.12.1</b> Clasificación no supervisada ¿???</a></li>
+<li class="chapter" data-level="5.12.2" data-path="procesamiento-de-imágenes-landsat.html"><a href="procesamiento-de-imágenes-landsat.html#clasificación-supervisada"><i class="fa fa-check"></i><b>5.12.2</b> Clasificación supervisada ¿?¿?¿?¿?</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Teledetección con Open Source y Software Libre</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="procesamiento-de-imágenes-landsat" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Procesamiento de imágenes Landsat</h1>
+<div id="pre-procesamiento-de-las-imágenes-con-el-complemento-semi-automatic-clasification-pluging" class="section level2">
+<h2><span class="header-section-number">5.1</span> Pre procesamiento de las imágenes con el complemento Semi Automatic Clasification Pluging</h2>
+</div>
+<div id="pre-procesamiento-con-grass" class="section level2">
+<h2><span class="header-section-number">5.2</span> Pre – procesamiento con GRASS</h2>
+</div>
+<div id="pre-procesamiento-con-saga" class="section level2">
+<h2><span class="header-section-number">5.3</span> Pre – procesamiento con SAGA</h2>
+</div>
+<div id="combinación-o-composición-rgb" class="section level2">
+<h2><span class="header-section-number">5.4</span> Combinación o composición RGB</h2>
+</div>
+<div id="mosaico-de-imágenes" class="section level2">
+<h2><span class="header-section-number">5.5</span> Mosaico de imágenes</h2>
+</div>
+<div id="fusión-de-imágenes" class="section level2">
+<h2><span class="header-section-number">5.6</span> Fusión de imágenes</h2>
+</div>
+<div id="cloud-masking" class="section level2">
+<h2><span class="header-section-number">5.7</span> Cloud Masking</h2>
+</div>
+<div id="temperatura-de-brillo" class="section level2">
+<h2><span class="header-section-number">5.8</span> Temperatura de brillo</h2>
+</div>
+<div id="corrección-topográfica" class="section level2">
+<h2><span class="header-section-number">5.9</span> Corrección Topográfica</h2>
+</div>
+<div id="relleno-slc-landsat-7" class="section level2">
+<h2><span class="header-section-number">5.10</span> Relleno SLC landsat 7</h2>
+</div>
+<div id="índices-espectrales" class="section level2">
+<h2><span class="header-section-number">5.11</span> Índices espectrales</h2>
+</div>
+<div id="clasificación-de-imágenes" class="section level2">
+<h2><span class="header-section-number">5.12</span> Clasificación de Imágenes</h2>
+<div id="clasificación-no-supervisada" class="section level3">
+<h3><span class="header-section-number">5.12.1</span> Clasificación no supervisada ¿???</h3>
+</div>
+<div id="clasificación-supervisada" class="section level3">
+<h3><span class="header-section-number">5.12.2</span> Clasificación supervisada ¿?¿?¿?¿?</h3>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="modelos-digitales-de-elevación.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com//edit/master/05_Prcesamiento_de_imagenes_landsat.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

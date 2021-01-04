@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Teledetección con Open Source y Software Libre</title>
+  <title>Chapter 2 Instalacion de Software y Complementos | Teledetección con Open Source y Software Libre</title>
   <meta name="description" content="Esta es una guia de auto entrenamiento para el uso de Qgis en el procesamiento digital de imagenes satelitales libres Perú - 2019." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Teledetección con Open Source y Software Libre" />
+  <meta property="og:title" content="Chapter 2 Instalacion de Software y Complementos | Teledetección con Open Source y Software Libre" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Teledetección con Open Source y Software Libre" />
+  <meta name="twitter:title" content="Chapter 2 Instalacion de Software y Complementos | Teledetección con Open Source y Software Libre" />
   
   <meta name="twitter:description" content="Esta es una guia de auto entrenamiento para el uso de Qgis en el procesamiento digital de imagenes satelitales libres Perú - 2019." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="breve-intoducción-a-la-teledetección.html"/>
+<link rel="prev" href="breve-intoducción-a-la-teledetección.html"/>
+<link rel="next" href="adquisición-de-imágenes.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,7 +140,7 @@
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="pre-procesamiento-de-imagenes.html"><a href="pre-procesamiento-de-imagenes.html#conversión-a-temperatura-de-brillo"><i class="fa fa-check"></i><b>4.7</b> Conversión a Temperatura de Brillo</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html"><i class="fa fa-check"></i><b>5</b> Modelos Digitales de Elevación</a><ul>
+<li class="chapter" data-level="5" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html"><i class="fa fa-check"></i><b>5</b> MODELOS DIGITALES DE ELEVACIÓN</a><ul>
 <li class="chapter" data-level="5.1" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html#reproyectar-modelo-digital-de-elevación"><i class="fa fa-check"></i><b>5.1</b> Reproyectar modelo digital de elevación</a></li>
 <li class="chapter" data-level="5.2" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html#cortar-modelo-digital-de-elevación"><i class="fa fa-check"></i><b>5.2</b> Cortar modelo digital de elevación</a></li>
 <li class="chapter" data-level="5.3" data-path="modelos-digitales-de-elevación.html"><a href="modelos-digitales-de-elevación.html#cálculo-de-pendiente"><i class="fa fa-check"></i><b>5.3</b> Cálculo de pendiente</a></li>
@@ -200,38 +200,40 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Teledetección con Open Source y Software Libre</h1>
-<p class="author"><em>Hugo Añamuro y Antony Barja</em></p>
-<p class="date"><em>2021-01-03</em></p>
-</div>
-<div id="acerca-de-esta-guía" class="section level1 unnumbered">
-<h1>Acerca de esta Guía</h1>
-<p><a href=""><img src="img/portada.png" width="250" height="375" alt="The geocompr book cover" align="right" style="margin: 0 1em 0 1em" /></a></p>
-<div style="text-align: justify">
-<p>Bajo la constante evolución de las Geotecnologías, la necesidad de tener al alcance herramientas poderosas que nos ayuden al manejo, edición, gestión, visualización, procesamiento y generación de información espacial se vuelve imprescindible.</p>
-<p>Existen muchas herramientas Open Source y libres, entre ellas tenemos <a href="https://grass.osgeo.org/">GRASS</a>, <a href="https://www.orfeo-toolbox.org/">OBT</a>, <a href="http://www.saga-gis.org/en/index.html">SAGA</a> y <a href="https://qgis.org/es/site/">Qgis</a>; herramientas que no tienen nada que envidiar a otras herramientas de licencia privativa.</p>
-<p><a href="https://qgis.org/es/site/">Qgis</a> es una herramienta de sistemas de información Geográfica con la capacidad de trabajar con cada una de las herramientas antes mencionadas de manera integrada bajo un solo entorno, por tal motivo es una herramienta útil para el procesamiento de imágenes satelitales libres como LandSat, ASTER, Sentinel 2, etc.</p>
-<p>Todo el Potencial de Procesamiento de Imágenes satelitales de Qgis se ve mejorado mediante complementos desarrollados para este fin, uno de ellos es SCP (Semi Automatic Clasification Plugin), este mismo tiene varas herramientas para realizar procedimientos van desde pre - procesamiento hasta el post procesamiento.</p>
-<p>Pensando en todo el Potencial de las herramientas Open Source y Software Libre es que se elaboró este libro, con el objetivo de que la persona que utilice este libro pueda aprender de manera práctica y de la forma más simple posible a procesar imágenes satelitales.</p>
-Es necesario precisar que este libro puede ser usado por usuarios de diferentes Sistemas Operativos ya sea Windows y Linux; es por eso que, se presentan ejercicios prácticos enfocados a que el lector pueda seguir paso a paso las funciones y secuencias del procesamiento de imágenes, explicados de la manera más clara posible.
-<div/>
-
-<div style="text-align: right">
-— <strong>Los Autores.</strong>
-<div/>
-
-<div style="text-align: justify">
-<div id="requerimientos-básicos-de-hardware" class="section level2 unnumbered">
-<h2>Requerimientos Básicos de Hardware</h2>
-<p><strong>Requisitos de Hardware:</strong></p>
+<div id="instalacion-de-software-y-complementos" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Instalacion de Software y Complementos</h1>
+<div id="instalación-de-qgis-en-windows" class="section level2">
+<h2><span class="header-section-number">2.1</span> Instalación de Qgis en Windows</h2>
+<p>PAra realizar la instalación de Qgis, debemos seguir las siguientes instrucciones:</p>
 <ol style="list-style-type: decimal">
-<li>Capacidad de memoria RAM: 4Gb (se recomienda 8Gb).</li>
-<li>Tamaño de Disco Duro: 10 GB.</li>
-<li>Procesador Gráfico: Se recomienda Procesador Gráfico Dedicado con VRAM de 1Gb como mínimo.</li>
+<li>Descargar Qgis desde: <a href="https://qgis.org/es/site/forusers/download.html" class="uri">https://qgis.org/es/site/forusers/download.html</a> (seleccionar la version de Qgis que desee)</li>
+<li>Ejecutar el instalador, posteriormente <code>aceptar los terminos de licencia y dejar la configuración por defecto</code>.</li>
 </ol>
-<div/>
-
+<div class="figure">
+<img src="img/02_Capitulo_II/01-Qgis-Install.PNG" width="800" height="500" alt="" />
+<p class="caption">Entorno gráfico de Qgis</p>
+</div>
+</div>
+<div id="instalación-de-qgis-en-linux" class="section level2">
+<h2><span class="header-section-number">2.2</span> Instalación de Qgis en Linux</h2>
+</div>
+<div id="instalación-de-comeplementos-plugins" class="section level2">
+<h2><span class="header-section-number">2.3</span> Instalación de Comeplementos (Plugins)</h2>
+<div id="instalación-de-semi-automatic-clasification-plugin" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Instalación de Semi Automatic Clasification Plugin</h3>
+</div>
+<div id="instalación-de-map-swipe-tool" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Instalación de Map Swipe Tool</h3>
+</div>
+<div id="instalación-de-cloud-masking" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Instalación de Cloud Masking</h3>
+</div>
+<div id="mas-plugins-conforme-se-avance-la-guia.." class="section level3">
+<h3><span class="header-section-number">2.3.4</span> Mas Plugins conforme se avance la guia…..</h3>
+</div>
+</div>
+<div id="intalación-de-orfeo-toolbox-otb" class="section level2">
+<h2><span class="header-section-number">2.4</span> Intalación de Orfeo Toolbox (OTB)</h2>
 
 </div>
 </div>
@@ -240,8 +242,8 @@ Es necesario precisar que este libro puede ser usado por usuarios de diferentes 
           </div>
         </div>
       </div>
-
-<a href="breve-intoducción-a-la-teledetección.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="breve-intoducción-a-la-teledetección.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="adquisición-de-imágenes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -272,7 +274,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com//edit/master/index.Rmd",
+"link": "https://github.com//edit/master/02_Instalacion_de_software_y_complementos.Rmd",
 "text": "Edit"
 },
 "history": {

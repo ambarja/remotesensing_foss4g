@@ -1,0 +1,59 @@
+# Modelos Digitales de Elevación 
+<div style="text-align: justify">
+Los modelos digitales de elevación o DEM no son otra cosa que modelos 3D de la superficie de la tierra, almacenados como un formato de cuadrícula o grilla de píxeles (Raster) donde cada celda tiene el valor de elevación promedio de su área de cobertura. Hay dos formas de modelos digitales o de elevación (DEM):<div/>
+
+1. **Modelos digitales de superficie (DSM)**, donde cada valor de píxel es la altura promedio de todas las características de la superficie, incluidos los edificios y el dosel de vegetación. Los modelos de superficie digitales se producen comúnmente a partir de pares de imágenes de satélite estéreo, denominados pares estereoscópicos.
+2. **Modelos digitales de terreno (DTM)**, donde el valor de cada píxel representa la elevación de la superficie del suelo. Estos datos son producidos comúnmente por los sistemas de imágenes RADAR.
+
+Existe una gran variedad de fuentes de donde se puede adquirir modelos digitales de elevación (DEM) de cualquier parte del mundo, entre ellos tenemos:
+
+- **SRTM** (Shuttle Radar Topographic Mission).
+- **ASTER** (Advanced Spaceborne Thermal Emission and Reflection Radiometer).
+- **Alos PALSAR.**
+- **TanDEM-X.**
+
+**NOTA:** En esta guía se mostrará solo 2 de estas fuentes de modelos digitales de elevación, siendo **SRTM** y **ASTER GDEM** los modelos digitales  de elevación que se utilizarán. 
+
+## Adquisición de Modelos Digitales de Elevación
+### SRTM mediante Earth Explorer
+Para poder descargar imágenes desde esta fuente es necesario contar con **usuario registrado**, la cual es muy cencillo de registrar, solo basta  registrarse en esta direccion: <https://ers.cr.usgs.gov/register> y rellenar la información que solicita.
+
+Con el usuario registrado,deberemos seguir los siguientes pasos:   
+
+1. Dirigirse a su navegador y digitar la dirección web:
+
+    <https://earthexplorer.usgs.gov/>
+
+![](img/05_Capitulo_V/01_SRTM_web.png){width=width}
+
+
+2. Dar click en `Login` y colocar los datos (usuario y contraseña).
+
+![](img/05_Capitulo_V/02_SRTM_login.png){width=width}
+
+3. Una vez colocada los datos en `Login`, en el apartado `Search Criteria`   hacer click en `decimal`.
+
+![](img/05_Capitulo_V/03_SRTM_Search_criteria.png){width=width}
+
+4. Posteriormente hacer click en `add coordinate`, en la ventana emergente colocar las coordenadas (geográficas) en grados decimales de área de donde se quiere adquirir el archivo raster; para caso de ejemplo utilizaremos la siguiente coordenada: **lat.** -15.2 y **long.** -70.2.
+
+![](img/05_Capitulo_V/04_SRTM_coordenadas.png){width=width}
+
+5. Con las coordenadas digitadas daremos click en `Data Sets` para seleccionar el producto, en ese apartado desplegar la opción `Digital Elevation > SRTM`, y marcar la opción `SRTM 1 ARC Second Global` para un raster de 30 metros de resolución o `SRTM Non – Void  Filled` para un raster de 90 metros de resolución.
+
+![](img/05_Capitulo_V/05_SRTM_data-sets.png){width=width}
+
+6. Una vez seleccionado el producto nos dirigimos al apartado `Results`.
+7. En este apartado podremos ver todas las imágenes SRTM de 30 metros que se intersectan con nuestra ubicación de búsqueda.
+8. En cada imagen resultado, nos muestra unas herramientas con la cual podremos desde realizar una pre visualización hasta descargar la imagen.
+9. Finalmente utilizaremos la herramienta  `Download`  para descargar las imágenes que deseemos.
+![](img/05_Capitulo_V/06_SRTM_descarga.png){width=width}
+
+
+## Reproyectar modelo digital de elevación 
+## Cortar modelo digital de elevación 
+## Cálculo de pendiente
+## Cálculo de dirección de pendiente (Aspecto)
+## Cálculo de Índice de robustez (heterogeneidad del terreno)
+## Cálculo de sombras (Hillshade)
+## Extracción de curvas de Nivel 

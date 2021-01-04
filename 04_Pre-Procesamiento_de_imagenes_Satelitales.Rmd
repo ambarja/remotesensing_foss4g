@@ -1,0 +1,28 @@
+# Pre - procesamiento de imagenes
+
+## Conversión de ND a Reflectividad Superficial
+### Correción de Imágenes con Complemento "SCP"
+### Correcióm de Imágenes con SAGA
+### Correcióm de Imágenes con GRASS
+### Correcióm de Imágenes con OTB
+
+## Reproyección de Imágenes
+### Reproyección de Imágen Monobanda
+### Reproyección de Imágen Multibanda 
+
+## Recorte de Imágen según Área de Interés
+### Recorte de Imágen Monobanda
+### Recorte de Imágen Multibanda 
+
+## Correcion Topográfica - Landsat
+
+## Relleno SLC de Landsat 7
+
+## Fusión de Imágenes 
+### Fusión de Imágenes Landsat con Complemento SCP
+### Fusión de Imágenes Landsat con SAGA
+### Fusión de Imágenes Landsat con GRASS
+### Fusión de Imágenes Landsat con OTB
+
+## Conversión  a Temperatura de Brillo
+

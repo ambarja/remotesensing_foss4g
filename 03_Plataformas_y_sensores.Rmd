@@ -1,0 +1,28 @@
+# Adquisición de Imágenes
+
+## MODIS
+### Características del Sensor MODIS
+### Adquisición Mediante Complemento SCP
+### Adquisición Mediente  Earth Data
+
+
+##	Landsat
+### Características del Sensor Landsat
+### Adquisición Mediante Complemento SCP
+### Adquisición Mediente  Earth Explorer
+### Adquisición Mediente  Glovis
+
+## Sentinel 2
+### Características del Sensor” Sentinel 2
+### Adquisición Mediante Complemento SCP
+### Adquisición Mediente Copernicus Open Access Hub
+
+## ASTER 
+### Características del Sensor ASTER
+### Adquisición Mediante Complemento SCP
+### Adquisición Mediente  EARTH DATA
+### Adquisición Mediente  Earth Explorer
+
+## CBERS-4 
+### Características del Sensor CBERS-4
+### Adquisición Mediente  INPE
